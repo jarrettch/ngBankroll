@@ -70,6 +70,17 @@ module.exports = function(app, passport, auth) {
     //Finish with setting up the articleId param
     app.param('articleId', articles.article);
 
+    //Visit Routes
+    var visits = require('../app/controllers/visits');
+    app.get('/visits', visits.all);
+    app.post('/visits', auth.requiresLogin, visits.create);
+    app.get('/visits/:visitId', visits.show);
+    app.put('/visits/:visitId', auth.requiresLogin, auth.article.hasAuthorization, visits.update);
+    app.del('/visits/:visitId', auth.requiresLogin, auth.article.hasAuthorization, visits.destroy);
+
+    //Finish with setting up the visitId param
+    app.param('visitId', visits.visit);
+
     //Home route
     var index = require('../app/controllers/index');
     app.get('/', index.render);
