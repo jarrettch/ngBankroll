@@ -1,0 +1,45 @@
+<section data-ng-controller="VisitsController">
+	<form class="form-horizontal" data-ng-submit="create()">
+		<div class="control-group">
+			<label class="control-label" for="datePlayed">Date Played</label>
+			<div class="controls">
+				<input type="date" data-ng-model="datePlayed" id="title" required>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="location">Location</label>
+			<div class="controls">
+				<input type="text" data-ng-model="location" id="title" placeholder="Location" required>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="stakes">Stakes</label>
+			<div class="controls">
+				<input type="text" data-ng-model="stakes" id="content" placeholder="Stakes">
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="hoursPlayed">Hours Played</label>
+			<div class="controls">
+				<input type="text" data-ng-model="hoursPlayed" id="content" placeholder="Hours Played">
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="profitOrLoss">Profit(or loss)</label>
+			<div class="controls">
+				<input type="text" data-ng-model="profitOrLoss" id="content" placeholder="Profit or Loss">
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="notes">Notes</label>
+			<div class="controls">
+				<textarea data-ng-model="notes" id="content" placeholder="Notes: Players, interesting hands, etc."></textarea>
+			</div>
+		</div>
+		<div class="control-group">
+			<div class="controls">
+				<input type="submit" class="pure-button pure-button-primary">
+			</div>
+		</div>
+	</form>
+</section>

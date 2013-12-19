@@ -1,0 +1,15 @@
+<section data-ng-controller="VisitsController" data-ng-init="find()">
+	<ul class="articles unstyled">
+		<li data-ng-repeat="visit in visits">
+			<span>{{visit.created | date:'medium'}}</span> /
+			<span>{{visit.user.name}}</span>
+			<h2><a data-ng-href="#!/visits/{{visit._id}}">Location: {{visit.location}}</a></h2>
+			<div>Stakes: {{visit.stakes}}</div>
+			<div>Visit Type: {{visit.visitType}}</div>
+			<div>Hours Played: {{visit.hoursPlayed}}</div>
+			<div>Profit or Loss: {{visit.profitOrLoss}}</div>
+			<div>Notes: {{visit.notes}}</div>
+		</li>
+	</ul>
+	<h1 data-ng-hide="!visits || visits.length">No visits yet. <br> Why don't you <a href="/#!/visits/create">Create One</a>?</h1>
+</section>
