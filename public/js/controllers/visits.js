@@ -48,7 +48,7 @@ angular.module('mean.visits').controller('VisitsController', ['$scope', '$routeP
         visit.updated.push(new Date().getTime());
 
         visit.$update(function() {
-            $location.path('visits/' + article._id);
+            $location.path('visits/' + visit._id);
         });
     };
 

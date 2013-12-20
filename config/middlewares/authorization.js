@@ -31,3 +31,15 @@ exports.article = {
         next();
     }
 };
+
+/**
+ * Visit authorizations routing middleware
+ */
+exports.visit = {
+    hasAuthorization: function(req, res, next) {
+        if (req.visit.user.id != req.user.id) {
+            return res.send(401, 'User is not authorized');
+        }
+        next();
+    }
+};
